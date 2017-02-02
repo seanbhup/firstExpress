@@ -1,0 +1,81 @@
+body {
+    text-align:center;
+    animation: color-change 30s infinite;
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  background-color:#7FD1B9;
+  /*color:#DE6E4B;*/
+  color: black;
+  font-family: 'Exo 2', sans-serif;
+  /*display:inline-block;*/
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+button{
+    width:100px;
+    height:35px;
+
+
+}
+
+
+.wrapper{
+    margin:auto;
+    text-align:center;
+    width: 300px;
+}
+
+hr{
+    border: 1px solid black;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.release-date{
+
+}
+
+.overview{
+    margin-top: 15px;
+    font-size:15px;
+}
+.poster{
+	width: 200px;
+	height: 328px;
+	margin: 10px;
+	border-radius: 5px;
+	box-shadow: 3px 5px 5px #124559;
+/* 	z-index: -1; */
+
+}
+
+.poster:hover{
+    transform: rotate3d(10,22,6,360deg) scale(1.2);
+
+	transition: all 1s;
+	z-index: 2;
+	position: relative;
+}
+
+
+@keyframes color-change {
+    0%   {background-color:#7FD1B9;}
+    25%  {background-color:#FFC09F;}
+    50%  {background-color:#FFEE93;}
+    75%  {background-color:#258EA6;}
+    100%  {background-color:#7FD1B9}
+}
+
+.input{
+    animation: color-change 30s infinite;
+    border:5px outset #00B7FF ;
+    margin-left:10px;
+    height:20px;
+    width:200px;
+}
