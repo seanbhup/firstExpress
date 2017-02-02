@@ -3,11 +3,8 @@ html
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet")
-        title Movie
+        title Search
     body
-
-
-    .wrapper
 
         .container
             .row
@@ -20,13 +17,6 @@ html
                         label Search for an actor
                         input.form-control#actor-search(type="text" name="actorSearch")
                 input.btn.btn-primary(type="submit" value="Search")
-        - for (let movie of movieArray)
-            hr
-            h1.title #{movie.title}
-            hr
-            img.poster(src="https://image.tmdb.org/t/p/w640/#{movie.poster_path}")
-            p.release-date #{movie.release_date}
-            button.button.btn.btn-primary
-                //- a(href="https://api.themoviedb.org/3/movie/#{movie.id}/videos?api_key=55e2d237df80ec5178651841fda5124c")View Trailer
-                a View Trailer
-            p.overview #{movie.overview}
+                
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")

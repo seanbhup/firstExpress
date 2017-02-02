@@ -38,8 +38,18 @@ router.get("/weather", function(req,res,next){
 
 });
 
+
+
+router.get("/blackjack", function(req,res,next){
+    res.render("blackjack", {});
+});
+
+router.get("/search", function(req,res,next){
+    res.render("search", {});
+});
+
 router.get("/movie", function(req,res,next){
-    
+
 
     var apikey = "55e2d237df80ec5178651841fda5124c"
     var movieUrl = "https://api.themoviedb.org/3/movie/now_playing?api_key="+apikey+"&language=en-US&page=1";
@@ -53,8 +63,29 @@ router.get("/movie", function(req,res,next){
 
 });
 
-router.get("/blackjack", function(req,res,next){
-    res.render("blackjack", {});
+router.post("/searchMovie", (req,res,next)=>{
+    var config = {
+        apikey: "&api_key=55e2d237df80ec5178651841fda5124c",
+        baseUrl: 'http://api.themoviedb.org/3/',
+        imageBase: 'http://image.tmdb.org/t/p/w300',
+        imageBaseFull: 'http://image.tmdb.org/t/p/original',
+        nowPlayingEP: 'movie/now_playing?',
+    };
+
+    var searchString = encodeURI(req.body.movieSearch);
+    var queryUrl = config.baseUrl + "search/movie?" + config.apikey + "&query=" + searchString;
+    // res.send(queryUrl);
+    request.get(queryUrl, (error, response, searchData)=>{
+        searchData = JSON.parse(searchData);
+        res.render("movie", {
+            movieArray: searchData.results,
+
+        });
+    })
 });
+
+router.get("/searchMovie", (req,res,next)=>{
+    res.send("im get route");
+})
 
 module.exports = router;

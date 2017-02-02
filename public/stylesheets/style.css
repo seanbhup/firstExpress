@@ -22,6 +22,9 @@ button{
 
 }
 
+form{
+    margin: auto;
+}
 
 .wrapper{
     margin:auto;
